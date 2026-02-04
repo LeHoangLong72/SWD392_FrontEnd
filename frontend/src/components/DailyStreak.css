@@ -1,0 +1,323 @@
+.daily-streak-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.streak-title {
+  font-size: 2rem;
+  color: #3c3c3c;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.streak-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.streak-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.streak-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Lesson Card Styling */
+.lesson-card {
+  border: 3px solid #58cc02;
+}
+
+.lesson-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #58cc02, #8fd14f);
+}
+
+.duo-mascot {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.duo-owl {
+  font-size: 80px;
+  animation: bounce 2s infinite;
+}
+
+.duo-sparkle {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+  font-size: 30px;
+  animation: sparkle 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+/* Fire Card Styling */
+.fire-card {
+  border: 3px solid #ff9600;
+}
+
+.fire-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #ff9600, #ffb800);
+}
+
+.fire-icon-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  border-radius: 50%;
+}
+
+.fire-icon {
+  font-size: 60px;
+  animation: fire-flicker 1.5s infinite;
+}
+
+@keyframes fire-flicker {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.card-content {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #3c3c3c;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.card-stats {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #58cc02;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  color: #58cc02;
+}
+
+.stat-total {
+  color: #afafaf;
+  font-size: 1.8rem;
+}
+
+.streak-days {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.day-dot {
+  font-size: 1.8rem;
+  color: #e5e5e5;
+  transition: transform 0.3s;
+}
+
+.day-dot.active {
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+.card-description {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #58cc02, #8fd14f);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(88, 204, 2, 0.3);
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(88, 204, 2, 0.4);
+}
+
+.continue-btn:active {
+  transform: translateY(0);
+}
+
+.continue-btn.orange {
+  background: linear-gradient(135deg, #ff9600, #ffb800);
+  box-shadow: 0 4px 12px rgba(255, 150, 0, 0.3);
+}
+
+.continue-btn.orange:hover {
+  box-shadow: 0 6px 16px rgba(255, 150, 0, 0.4);
+}
+
+/* Weekly Progress */
+.weekly-progress {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.weekly-progress h3 {
+  font-size: 1.5rem;
+  color: #3c3c3c;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+}
+
+.day-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.day-label {
+  font-size: 0.9rem;
+  color: #777;
+  font-weight: 600;
+}
+
+.day-indicator {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #afafaf;
+  border: 2px solid #e5e5e5;
+  transition: all 0.3s;
+}
+
+.day-item.completed .day-indicator {
+  background: linear-gradient(135deg, #58cc02, #8fd14f);
+  border-color: #58cc02;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .daily-streak-container {
+    padding: 2rem 1rem;
+  }
+
+  .streak-title {
+    font-size: 1.5rem;
+  }
+
+  .streak-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .streak-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .card-stats {
+    font-size: 2rem;
+  }
+
+  .week-days {
+    gap: 0.5rem;
+  }
+
+  .day-indicator {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .day-label {
+    font-size: 0.8rem;
+  }
+}

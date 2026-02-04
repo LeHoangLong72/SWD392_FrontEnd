@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  background: #f7f7f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.header {
+  background: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-left .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #58cc02;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+/* Streak Link */
+.streak-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1cb0f6;
+  border-radius: 12px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.streak-link:hover {
+  background: #f0f9ff;
+}
+
+.streak-link.active {
+  color: #1cb0f6;
+}
+
+.streak-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #1cb0f6;
+  border-radius: 3px 3px 0 0;
+}
+
+.streak-link-icon {
+  font-size: 1.3rem;
+}
+
+.streak-link-text {
+  text-transform: capitalize;
+}
+
+.header-center .nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #777;
+  border-radius: 12px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.nav-btn:hover {
+  background: #f7f7f7;
+  color: #333;
+}
+
+.nav-btn.active {
+  color: #1cb0f6;
+}
+
+.nav-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #1cb0f6;
+  border-radius: 3px 3px 0 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Auth Header Buttons */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.auth-header-btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-btn {
+  background: transparent;
+  color: #1cb0f6;
+  border: 2px solid #1cb0f6;
+}
+
+.login-btn:hover {
+  background: #1cb0f6;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(28, 176, 246, 0.3);
+}
+
+.signup-btn {
+  background: #58cc02;
+  color: white;
+  border: 2px solid #58cc02;
+}
+
+.signup-btn:hover {
+  background: #4caf00;
+  border-color: #4caf00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(88, 204, 2, 0.3);
+}
+
+.streak, .xp {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f7f7f7;
+  border-radius: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.streak:hover {
+  background: #ffe8cc;
+  transform: scale(1.05);
+}
+
+.streak-icon, .xp-icon {
+  font-size: 1.5rem;
+}
+
+.streak-count, .xp-count {
+  color: #ff9600;
+  font-size: 1.1rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.profile:hover {
+  background: #f7f7f7;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #58cc02, #1cb0f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.1);
+}
+
+.profile-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3c3c3c;
+  padding-right: 0.5rem;
+}
+
+/* Main Content */
+.main-content {
+  min-height: calc(100vh - 80px);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .header-center {
+    order: 3;
+    width: 100%;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .nav-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .header-right {
+    gap: 0.8rem;
+  }
+
+  .streak, .xp {
+    padding: 0.4rem 0.8rem;
+  }
+}
