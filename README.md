@@ -1,21 +1,5 @@
 # React + Vite
 
-## API backend (Azure)
-
-Frontend đang gọi API qua biến môi trường `VITE_API_BASE_URL` trong `src/services/api.js`.
-
-- Development: dùng file `frontend/.env.development`
-- Production build: dùng file `frontend/.env.production`
-
-Giá trị hiện tại:
-
-`VITE_API_BASE_URL=https://mywebapiapp20260326011630-bvewb8d4djbebvd6.eastasia-01.azurewebsites.net`
-
-Lưu ý:
-
-- Không thêm `/swagger` vào URL base.
-- Nếu chạy frontend local (`http://localhost:5173`), backend cần bật CORS cho origin này.
-
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
